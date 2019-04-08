@@ -50,7 +50,7 @@ class Movies extends Component {
       selectedGenre,
       movies: allMovies
     } = this.state;
-    if (count === 0) return <p>There are no movies in the database.</p>;
+    if (count === 0) return <p>There are no movies in th database.</p>;
 
     const filtered =
       selectedGenre && selectedGenre._id

@@ -4,17 +4,17 @@ import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listGroup";
 import { getMovies } from "../services/fakeMovieService";
 import { getGenres } from "../services/fakeGenreService";
-import MoviesTable from "./moviesTable";
 import _ from "lodash";
+import MoviesTable from "./moviesTable";
+
 class Movies extends Component {
   state = {
-    movies: [],
-    genres: [],
+    movies: getMovies(),
     currentPage: 1,
+    genres: [],
     pageSize: 4,
     sortColumn: { path: "title", order: "asc" }
   };
-
   componentDidMount() {
     const genres = [{ _id: "", name: "All Genres" }, ...getGenres()];
     this.setState({ movies: getMovies(), genres });
@@ -51,8 +51,8 @@ class Movies extends Component {
       pageSize,
       currentPage,
       sortColumn,
-      selectedGenre,
-      movies: allMovies
+      movies: allMovies,
+      selectedGenre
     } = this.state;
     if (count === 0) return <p>There are no movies in the database.</p>;
 

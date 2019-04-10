@@ -8,9 +8,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 
 ReactDOM.render(
-  <BrouwserRouter>
+  <BrowserRouter>
     <App />
-  </BrouwserRouter>,
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
